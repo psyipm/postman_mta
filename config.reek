@@ -1,0 +1,13 @@
+UnusedPrivateMethod:
+  enabled: true
+
+IrresponsibleModule:
+  enabled: false
+
+UnusedPrivateMethod:
+  exclude:
+    - "PostmanMta::ApiClient"
+
+UtilityFunction:
+  exclude:
+    - "PostmanMta::Utils::Signature#digest"
