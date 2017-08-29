@@ -1,0 +1,27 @@
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'postman_mta/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = 'postman_mta'
+  spec.version       = PostmanMta::VERSION
+  spec.authors       = ['Igor Malinovskiy']
+  spec.email         = ['igor.malinovskiy@netfix.xyz']
+
+  spec.summary       = 'Rails gem to easy integrate postman to your application'
+  spec.description   = %q{This gem will add some routes to the application to forward requests from frontend to postman API}
+  spec.homepage      = 'https://github.com/psyipm/postman_mta'
+  spec.license       = 'MIT'
+
+  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|spec|features)/})
+  end
+  spec.bindir        = 'exe'
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths = ['lib']
+
+  spec.add_development_dependency 'bundler', '~> 1.15'
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rspec', '~> 3.0'
+end
