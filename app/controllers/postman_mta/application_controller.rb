@@ -4,13 +4,11 @@ module PostmanMta
 
     MODULES = [
       AbstractController::Rendering,
-      ActionController::HideActions,
 
       ActionController::UrlFor,
       ActionController::Redirecting,
       ActionController::Renderers::All,
       ActionController::ConditionalGet,
-      ActionController::RackDelegation,
 
       ActionController::ForceSSL,
 
@@ -22,7 +20,11 @@ module PostmanMta
 
       # Add instrumentations hooks at the bottom, to ensure they instrument
       # all the methods properly.
-      ActionController::Instrumentation
+      ActionController::Instrumentation,
+
+      # Params wrapper should come before instrumentation so they are
+      # properly showed in logs
+      ActionController::ParamsWrapper
     ].freeze
 
     MODULES.each do |mod|

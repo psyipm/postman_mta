@@ -1,0 +1,65 @@
+{
+  "conversations": [
+    {
+      "id": 56,
+      "subject": "Test message",
+      "last_message_id": 76,
+      "folder_type_id": 2,
+      "folder_type_name": "sent",
+      "domain_id": 1,
+      "messages": [
+        {
+          "id": 76,
+          "plain_body": "test message",
+          "sender_id": null,
+          "recipient_id": null,
+          "state": null,
+          "created_at": "2017-08-30T13:04:18.290Z"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "subject": "Test message",
+      "last_message_id": 75,
+      "folder_type_id": 2,
+      "folder_type_name": "sent",
+      "domain_id": 1,
+      "messages": [
+        {
+          "id": 75,
+          "plain_body": "test message",
+          "sender_id": null,
+          "recipient_id": null,
+          "state": null,
+          "created_at": "2017-08-30T10:20:03.919Z"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "subject": "Test message",
+      "last_message_id": 74,
+      "folder_type_id": 2,
+      "folder_type_name": "sent",
+      "domain_id": 1,
+      "messages": [
+        {
+          "id": 74,
+          "plain_body": "test message",
+          "sender_id": null,
+          "recipient_id": null,
+          "state": null,
+          "created_at": "2017-08-30T10:16:20.721Z"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "current_page": 1,
+    "next_page": 2,
+    "prev_page": null,
+    "total_pages": 7,
+    "total_count": 21
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "conversation": {
+    "id": 56,
+    "subject": "Test message",
+    "last_message_id": 76,
+    "folder_type_id": 2,
+    "folder_type_name": "sent",
+    "domain_id": 1,
+    "messages": [
+      {
+        "id": 76,
+        "plain_body": "test message",
+        "sender_id": null,
+        "recipient_id": null,
+        "state": null,
+        "created_at": "2017-08-30T13:04:18.290Z"
+      }
+    ],
+    "labels": [],
+    "tags": []
+  }
+}

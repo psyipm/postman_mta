@@ -1,6 +1,8 @@
+require 'httparty'
+
 module PostmanMta
   class ApiClient
-    include HTTParty
+    include ::HTTParty
     base_uri PostmanMta.api_endpoint
 
     [:get, :post, :put, :patch, :delete].each do |type|

@@ -5,13 +5,17 @@ module PostmanMta
     end
 
     def create
-      render json: message.create(params).as_json
+      render json: message.create(message_params).as_json
     end
 
     private
 
     def message
-      @message ||= PostmanMta::Models::Message.new
+      @message ||= PostmanMta::Message.new
+    end
+
+    def message_params
+      params.permit!
     end
   end
 end

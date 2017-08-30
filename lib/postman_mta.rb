@@ -9,11 +9,6 @@ module PostmanMta
 
   autoload :ApiClient, 'postman_mta/api_client'
 
-  module Models
-    autoload :ApplicationModel, 'postman_mta/models/application_model'
-    autoload :Message, 'postman_mta/models/message'
-  end
-
   mattr_accessor :api_key
   mattr_accessor :api_secret
   mattr_accessor :api_endpoint

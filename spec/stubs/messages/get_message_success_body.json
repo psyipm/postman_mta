@@ -1,0 +1,33 @@
+{
+  "message": {
+    "status": {
+      "status": "Sent",
+      "last_delivery_attempt": "2017-08-30T10:16:19.021Z",
+      "held": false,
+      "hold_expiry": null
+    },
+    "plain_body": "test message",
+    "html_body": null,
+    "details": {
+      "rcpt_to": "tester@test.com",
+      "mail_from": "support@example.com",
+      "subject": "Test message",
+      "message_id": "b45f5538-fd04-4968-88cf-a1ba6f5c1367@rp.md.testerok.org",
+      "timestamp": "2017-08-30T10:16:17.946Z",
+      "direction": "outgoing",
+      "size": "446",
+      "bounce": 0,
+      "bounce_for_id": 0,
+      "tag": null,
+      "received_with_ssl": 1,
+      "references": []
+    },
+    "inspection": {
+      "inspected": false,
+      "spam": false,
+      "spam_score": "0.0",
+      "threat": false,
+      "threat_details": null
+    }
+  }
+}
