@@ -11,7 +11,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['igor.malinovskiy@netfix.xyz']
 
   spec.summary       = 'Rails gem to easy integrate postman to your application'
-  spec.description   = %q{This gem will add some routes to the application to forward requests from frontend to postman API}
+  spec.description   =
+    'This gem will add some routes to the application to forward requests from frontend to postman API'
   spec.homepage      = 'https://github.com/psyipm/postman_mta'
   spec.license       = 'MIT'
 

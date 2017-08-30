@@ -8,6 +8,10 @@
 /spec/reports/
 /tmp/
 
+# dummy application
+spec/dummy/tmp/
+spec/dummy/log/
+
 # rspec failure tracking
 .rspec_status
 *.DS_Store
