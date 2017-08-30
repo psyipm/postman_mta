@@ -1,7 +1,7 @@
 module PostmanMta
   class TagsController < ApplicationController
     def create
-      render json: tag.create(params).as_json
+      render json: tag.create(tag_params).as_json
     end
 
     def destroy
@@ -12,6 +12,10 @@ module PostmanMta
 
     def tag
       @tag ||= PostmanMta::Tag.new(params[:conversation_id])
+    end
+
+    def tag_params
+      params.permit!
     end
   end
 end
