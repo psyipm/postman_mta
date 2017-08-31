@@ -74,6 +74,13 @@ for `messages#create` the following parameters accepted:
 
 Messages are grouped in conversations. Conversations can be accessed using corresponding `#index` and `#show` actions.
 
+Filter parameters for `conversations#index`:
+
+```ruby
+    { tag_title: 'some_tag', tag_value: 'some_value' }
+    { label: 'some_label_title' }
+```
+
 Conversations can be tagged and/or labeled. Labels and tags can be used for search. To create new tag for conversation, send the following params to `tags#create`:
 
 ```ruby
