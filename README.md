@@ -1,8 +1,12 @@
-# PostmanMta
+# Postman MTA
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/postman_mta`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://semaphoreci.com/api/v1/igormalinovskiy/postman_mta/branches/master/shields_badge.svg)](https://semaphoreci.com/igormalinovskiy/postman_mta)
+[![Code Climate](https://codeclimate.com/github/psyipm/postman_mta/badges/gpa.svg)](https://codeclimate.com/github/psyipm/postman_mta)
+[![Gem Version](https://badge.fury.io/rb/postman_mta.svg)](https://badge.fury.io/rb/postman_mta)
 
-TODO: Delete this and the text above, and describe your gem
+Rails gem to easy integrate Postman to your application
+
+This gem will add some routes to the application to forward requests from frontend to postman API
 
 ## Installation
 
@@ -22,7 +26,68 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Mount engine in `config/routes.rb`:
+
+```ruby
+mount PostmanMta::Engine => '/mta'
+```
+
+Then configure the gem:
+
+```ruby
+# config/initializers/postman_mta.rb
+PostmanMta.setup do |config|
+  config.api_key = ENV['POSTMAN_API_KEY']
+  config.api_secret = ENV['POSTMAN_API_SECRET']
+  config.api_endpoint = ENV['POSTMAN_API_ENDPOINT']
+end
+```
+
+This will add the following routes:
+
+```
+Routes for PostmanMta::Engine:
+           messages POST   /messages(.:format)                                  postman_mta/messages#create
+            message GET    /messages/:id(.:format)                              postman_mta/messages#show
+conversation_labels POST   /conversations/:conversation_id/labels(.:format)     postman_mta/labels#create
+ conversation_label DELETE /conversations/:conversation_id/labels/:id(.:format) postman_mta/labels#destroy
+  conversation_tags POST   /conversations/:conversation_id/tags(.:format)       postman_mta/tags#create
+   conversation_tag DELETE /conversations/:conversation_id/tags/:id(.:format)   postman_mta/tags#destroy
+      conversations GET    /conversations(.:format)                             postman_mta/conversations#index
+       conversation GET    /conversations/:id(.:format)                         postman_mta/conversations#show
+```
+
+for messages#create the following parameters accepted:
+```ruby
+    attribute :from, String
+    attribute :to, Array # The array of recepient email addresses
+    attribute :plain_body, String
+    attribute :html_body, String
+    attribute :bcc, Array # The array of bcc email addresses
+    attribute :cc, Array # The array of cc email addresses
+    attribute :reply_to, String
+    attribute :in_reply_to, String
+    attribute :subject, String
+    attribute :attachments, Array # [{ base64: "YXNmYXNmYXNm\n", name: 'file.txt', content_type: 'text/plain' }]
+```
+
+Messages are grouped in conversations. Conversations can be accessed using corresponding `#index` and `#show` actions.
+
+Conversations can be tagged and/or labeled. Labels and tags can be used for search. To create new tag for conversation, send the following params to `tags#create`:
+
+```ruby
+    attribute :title, String
+    attribute :value, String
+    attribute :conversation_id, Integer
+```
+
+Params for label:
+
+```ruby
+    attribute :title, String
+    attribute :sort_order, Integer
+    attribute :color, String
+```
 
 ## Development
 
@@ -32,7 +97,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/postman_mta.
+Bug reports and pull requests are welcome on GitHub at https://github.com/psyipm/postman_mta.
 
 ## License
 
