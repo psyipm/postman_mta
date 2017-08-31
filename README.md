@@ -57,7 +57,8 @@ conversation_labels POST   /conversations/:conversation_id/labels(.:format)     
        conversation GET    /conversations/:id(.:format)                         postman_mta/conversations#show
 ```
 
-for messages#create the following parameters accepted:
+for `messages#create` the following parameters accepted:
+
 ```ruby
     attribute :from, String
     attribute :to, Array # The array of recepient email addresses
