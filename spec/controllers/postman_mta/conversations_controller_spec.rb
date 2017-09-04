@@ -17,4 +17,10 @@ RSpec.describe PostmanMta::ConversationsController, type: :controller do
     expect(response).to be_success
     expect(response.body).to match(/conversation[\w\W]+test message/)
   end
+
+  it 'should mark conversations as read' do
+    put :read, params: { conversation_ids: [conversation_id] }
+
+    expect(response).to be_success
+  end
 end

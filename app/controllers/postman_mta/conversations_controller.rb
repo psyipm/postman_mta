@@ -1,11 +1,15 @@
 module PostmanMta
   class ConversationsController < ApplicationController
     def index
-      render json: conversation.index(filter_params).as_json
+      render json: conversation.index(permitted_params).as_json
     end
 
     def show
       render json: conversation.find(params[:id]).as_json
+    end
+
+    def read
+      render json: conversation.mark_as_read(permitted_params).as_json
     end
 
     private
@@ -14,7 +18,7 @@ module PostmanMta
       @conversation ||= PostmanMta::Conversation.new
     end
 
-    def filter_params
+    def permitted_params
       params.permit!
     end
   end
