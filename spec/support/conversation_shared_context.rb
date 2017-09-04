@@ -11,6 +11,10 @@ RSpec.shared_context 'conversation', shared_context: :metadata do
     File.new('spec/stubs/conversations/read_conversations_success_body.json')
   end
 
+  let(:delete_conversation_success_body) do
+    File.new('spec/stubs/conversations/delete_conversation_success_body.json')
+  end
+
   let(:headers) { { 'Content-type' => 'application/json' } }
 
   before(:each) do
@@ -22,6 +26,9 @@ RSpec.shared_context 'conversation', shared_context: :metadata do
 
     stub_request(:patch, Regexp.new('/api/v1/conversations/read'))
       .to_return(status: 200, body: read_conversations_success_body, headers: headers)
+
+    stub_request(:delete, Regexp.new('/api/v1/conversations/[\d]+/trash'))
+      .to_return(status: 200, body: delete_conversation_success_body, headers: headers)
   end
 end
 
