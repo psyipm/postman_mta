@@ -12,4 +12,6 @@ PostmanMta::Engine.routes.draw do
     resources :labels, only: [:create, :destroy]
     resources :tags, only: [:create, :destroy]
   end
+
+  resources :routes, only: :index
 end

@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {
+      "domain": {
+        "id": 1,
+        "name": "example.com",
+        "uuid": "4a2a2274-a56b-437c-9cd0-dfe1f554a180"
+      },
+      "name": "support",
+      "spam_mode": "Mark"
+    },
+    {
+      "domain": {
+        "id": 2,
+        "name": "testexample.com",
+        "uuid": "70b30eb8-459b-4e7d-90d1-b61885b363b4"
+      },
+      "name": "support",
+      "spam_mode": "Fail"
+    }
+  ]
+}
