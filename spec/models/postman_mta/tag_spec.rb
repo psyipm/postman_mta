@@ -6,11 +6,11 @@ RSpec.describe PostmanMta::Tag do
 
   it 'should create tag' do
     tag = described_class.new(conversation_id).create(tag_params)
-    expect(tag['status']).to match(/success/)
+    expect(tag[:json]['status']).to match(/success/)
   end
 
   it 'should destroy tag' do
     tag = described_class.new(conversation_id).destroy(1)
-    expect(tag['status']).to match(/success/)
+    expect(tag[:json]['status']).to match(/success/)
   end
 end

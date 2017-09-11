@@ -6,20 +6,20 @@ module PostmanMta
 
     [:inbox, :sent, :spam, :trash].each do |folder|
       define_method folder do
-        render json: conversation.folder(folder, permitted_params).as_json
+        render conversation.folder(folder, permitted_params)
       end
     end
 
     def show
-      render json: conversation.find(params[:id]).as_json
+      render conversation.find(params[:id])
     end
 
     def read
-      render json: conversation.mark_as_read(permitted_params).as_json
+      render conversation.mark_as_read(permitted_params)
     end
 
-    def move_to_trash
-      render json: conversation.move_to_trash(params[:id]).as_json
+    def destroy
+      render conversation.move_to_trash(params[:id])
     end
 
     private

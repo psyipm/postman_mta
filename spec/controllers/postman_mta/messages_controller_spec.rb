@@ -14,6 +14,7 @@ RSpec.describe PostmanMta::MessagesController, type: :controller do
 
   it 'should render create action' do
     post :create, params: { from: 'tester@test.com', to: 'support@example.com', plain_body: 'test message' }
+
     expect(response).to be_success
     expect(response.body).to match(/success/)
   end

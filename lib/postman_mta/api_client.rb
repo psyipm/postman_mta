@@ -18,7 +18,9 @@ module PostmanMta
         request_method: request_type.upcase, path: path
       ).headers
 
-      self.class.send(request_type.downcase, path, { headers: headers }.merge(options)).parsed_response
+      response = self.class.send(request_type.downcase, path, { headers: headers }.merge(options))
+
+      { json: response.parsed_response.as_json, status: response.code }
     end
   end
 end

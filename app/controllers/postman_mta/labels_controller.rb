@@ -1,11 +1,11 @@
 module PostmanMta
   class LabelsController < ApplicationController
     def create
-      render json: label.create(label_params).as_json
+      render label.create(label_params)
     end
 
     def destroy
-      render json: label.destroy(params[:id]).as_json
+      render label.destroy(params[:id])
     end
 
     private

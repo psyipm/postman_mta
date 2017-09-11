@@ -1,7 +1,7 @@
 module PostmanMta
   class RoutesController < ApplicationController
     def index
-      render json: route.index.as_json
+      render route.index
     end
 
     private

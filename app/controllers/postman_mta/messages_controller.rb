@@ -1,11 +1,11 @@
 module PostmanMta
   class MessagesController < ApplicationController
     def show
-      render json: message.find(params[:id]).as_json
+      render message.find(params[:id])
     end
 
     def create
-      render json: message.create(message_params).as_json
+      render message.create(message_params)
     end
 
     private

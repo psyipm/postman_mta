@@ -7,7 +7,7 @@ RSpec.describe PostmanMta::Message do
   it 'should find message by id' do
     message = described_class.new.find(1)
     expect(message).to_not be_empty
-    expect(message.dig('message', 'plain_body')).to eq('test message')
+    expect(message[:json].dig('message', 'plain_body')).to eq('test message')
   end
 
   it 'should create message from params' do
@@ -15,6 +15,6 @@ RSpec.describe PostmanMta::Message do
     message = described_class.new.create(params)
 
     expect(message).to_not be_empty
-    expect(message['status']).to eq('success')
+    expect(message[:json]['status']).to eq('success')
   end
 end

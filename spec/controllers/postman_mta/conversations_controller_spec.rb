@@ -33,7 +33,7 @@ RSpec.describe PostmanMta::ConversationsController, type: :controller do
   end
 
   it 'should move conversation to trash' do
-    delete :move_to_trash, params: { id: conversation_id }
+    delete :destroy, params: { id: conversation_id }
 
     expect(response).to be_success
   end
