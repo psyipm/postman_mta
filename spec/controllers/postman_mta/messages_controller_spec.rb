@@ -7,7 +7,7 @@ RSpec.describe PostmanMta::MessagesController, type: :controller do
   let(:message_id) { 1 }
 
   it 'should render show action' do
-    get :show, params: { id: message_id }
+    get :show, params: { token: message_id }
     expect(response).to be_success
     expect(response.body).to match(/test message/)
   end

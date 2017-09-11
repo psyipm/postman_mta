@@ -1,7 +1,7 @@
 module PostmanMta
   class MessagesController < ApplicationController
     def show
-      render message.find(params[:id])
+      render message.find(params[:token])
     end
 
     def create
