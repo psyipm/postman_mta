@@ -23,5 +23,9 @@ module PostmanMta
     def mark_as_read(params = {})
       patch('/api/v1/conversations/read', body: params)
     end
+
+    def move(params = {})
+      patch('/api/v1/conversations/move', body: params)
+    end
   end
 end

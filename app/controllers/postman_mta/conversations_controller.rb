@@ -22,6 +22,10 @@ module PostmanMta
       render conversation.move_to_trash(params[:id])
     end
 
+    def move
+      render conversation.move(permitted_params)
+    end
+
     private
 
     def conversation

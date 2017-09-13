@@ -37,4 +37,10 @@ RSpec.describe PostmanMta::ConversationsController, type: :controller do
 
     expect(response).to be_success
   end
+
+  it 'should move conversation to folder' do
+    put :move, params: { conversation_ids: [conversation_id], folder: 'spam' }
+
+    expect(response).to be_success
+  end
 end
