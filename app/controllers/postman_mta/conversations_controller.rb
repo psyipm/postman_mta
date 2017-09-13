@@ -1,7 +1,7 @@
 module PostmanMta
   class ConversationsController < ApplicationController
     def index
-      render json: conversation.index(permitted_params).as_json
+      render conversation.index(permitted_params)
     end
 
     [:inbox, :sent, :spam, :trash].each do |folder|
