@@ -14,5 +14,11 @@ PostmanMta::Engine.routes.draw do
     resources :tags, only: [:create, :destroy]
   end
 
+  namespace :stats do
+    resources :messages, only: [] do
+      match :unread, on: :collection, via: :get
+    end
+  end
+
   resources :routes, only: :index
 end

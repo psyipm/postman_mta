@@ -1,0 +1,26 @@
+{
+  "stats": {
+    "folders": {
+      "inbox": 1,
+      "sent": 5,
+      "spam": 0,
+      "trash": 4
+    },
+    "labels": [
+      {
+        "color": "#fc0bce",
+        "count": 0,
+        "id": 3,
+        "sort_order": null,
+        "title": "test_label"
+      },
+      {
+        "color": "#8dd29e",
+        "count": 1,
+        "id": 4,
+        "sort_order": null,
+        "title": "test label"
+      }
+    ]
+  }
+}

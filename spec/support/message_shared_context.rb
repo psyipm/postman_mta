@@ -1,6 +1,7 @@
 RSpec.shared_context 'message', shared_context: :metadata do
   let(:get_message_success_body) { File.new('spec/stubs/messages/get_message_success_body.json') }
   let(:create_message_success_body) { File.new('spec/stubs/messages/create_message_success_body.json') }
+  let(:unread_messages_stats_body) { File.new('spec/stubs/messages/unread_messages_stats_body.json') }
   let(:headers) { { 'Content-type' => 'application/json' } }
 
   before(:each) do
@@ -9,6 +10,9 @@ RSpec.shared_context 'message', shared_context: :metadata do
 
     stub_request(:post, Regexp.new('/api/v1/messages'))
       .to_return(status: 201, body: create_message_success_body, headers: headers)
+
+    stub_request(:get, Regexp.new('/api/v1/stats/messages/unread'))
+      .to_return(status: 200, body: unread_messages_stats_body, headers: headers)
   end
 end
 

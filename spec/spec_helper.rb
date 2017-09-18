@@ -15,6 +15,7 @@ PostmanMta.setup do |config|
 end
 
 RSpec.configure do |config|
+  config.include APIMatchers::RSpecMatchers
   config.include ApplicationRoutes, type: :controller
 
   # Enable flags like --only-failures and --next-failure

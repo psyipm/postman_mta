@@ -7,5 +7,9 @@ module PostmanMta
     def create(params)
       post('/api/v1/messages', body: params)
     end
+
+    def unread_stats
+      get('/api/v1/stats/messages/unread')
+    end
   end
 end
