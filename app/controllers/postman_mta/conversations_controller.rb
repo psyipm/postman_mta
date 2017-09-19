@@ -18,6 +18,10 @@ module PostmanMta
       render conversation.mark_as_read(permitted_params)
     end
 
+    def unread
+      render conversation.mark_as_unread(permitted_params)
+    end
+
     def destroy
       render conversation.move_to_trash(params[:id])
     end

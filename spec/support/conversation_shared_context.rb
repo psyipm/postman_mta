@@ -28,7 +28,7 @@ RSpec.shared_context 'conversation', shared_context: :metadata do
     stub_request(:get, Regexp.new('/api/v1/conversations/[\d]*'))
       .to_return(status: 200, body: show_conversation_success_body, headers: headers)
 
-    stub_request(:patch, Regexp.new('/api/v1/conversations/read'))
+    stub_request(:patch, Regexp.new('/api/v1/conversations/mark'))
       .to_return(status: 200, body: read_conversations_success_body, headers: headers)
 
     stub_request(:delete, Regexp.new('/api/v1/conversations/[\d]+/trash'))

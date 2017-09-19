@@ -21,7 +21,11 @@ module PostmanMta
     end
 
     def mark_as_read(params = {})
-      patch('/api/v1/conversations/read', body: params)
+      patch('/api/v1/conversations/mark', body: params.merge(event: 'mark_as_read'))
+    end
+
+    def mark_as_unread(params = {})
+      patch('/api/v1/conversations/mark', body: params.merge(event: 'mark_as_unread'))
     end
 
     def move(params = {})

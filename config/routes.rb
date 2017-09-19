@@ -8,6 +8,7 @@ PostmanMta::Engine.routes.draw do
 
     match :starred, on: :collection, via: :get, to: 'conversations#index'
     match :read, on: :collection, via: [:put, :patch]
+    match :unread, on: :collection, via: [:put, :patch]
     match :move, on: :collection, via: [:put, :patch]
 
     resources :labels, only: [:create, :destroy]

@@ -32,6 +32,12 @@ RSpec.describe PostmanMta::ConversationsController, type: :controller do
     expect(response).to be_success
   end
 
+  it 'should mark conversations as unread' do
+    put :unread, params: { conversation_ids: [conversation_id] }
+
+    expect(response).to be_success
+  end
+
   it 'should move conversation to trash' do
     delete :destroy, params: { id: conversation_id }
 
