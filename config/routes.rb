@@ -1,5 +1,7 @@
 PostmanMta::Engine.routes.draw do
-  resources :messages, only: [:show, :create], param: :token
+  resources :messages, only: [:show, :create], param: :token do
+    resources :attachments, only: :show, param: :uuid
+  end
 
   resources :conversations, only: [:index, :show, :destroy] do
     [:inbox, :sent, :spam, :trash].each do |folder|
