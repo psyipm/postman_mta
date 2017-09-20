@@ -8,7 +8,8 @@ RSpec.describe PostmanMta::AttachmentsController, type: :controller do
     get :show, params: { message_token: 'some_token', uuid: 'some_uuid' }
 
     expect(response).to be_success
-    expect(response.body).to have_node(:attachment)
-    expect(response.body).to have_node(:filename).with('file.txt')
+
+    expect(response.headers['Content-Type']).to eq 'text/plain'
+    expect(response.headers['Content-Disposition']).to match(/attachment[\w\W\s]+filename[\W]+file.txt/)
   end
 end
