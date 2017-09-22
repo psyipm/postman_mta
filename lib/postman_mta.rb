@@ -13,6 +13,9 @@ module PostmanMta
   mattr_accessor :api_secret
   mattr_accessor :api_endpoint
 
+  # This block will be executed before request, and return value will be merged to params hash
+  mattr_accessor :before_request_hook
+
   def self.setup
     yield self
   end

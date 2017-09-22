@@ -11,3 +11,4 @@ UnusedPrivateMethod:
 UtilityFunction:
   exclude:
     - "PostmanMta::Utils::Signature#digest"
+    - "PostmanMta::ApiClient#perform_request"
