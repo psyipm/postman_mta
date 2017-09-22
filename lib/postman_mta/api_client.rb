@@ -9,7 +9,7 @@ module PostmanMta
     private
 
     def perform_request(request_type, path, options = {})
-      api_request = ApiRequest.new(request_type, path, options)
+      api_request = ::PostmanMta::ApiRequest.new(request_type, path, options)
       response = api_request.perform
 
       { json: response.parsed_response, status: response.code }

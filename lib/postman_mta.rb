@@ -8,6 +8,7 @@ module PostmanMta
   end
 
   autoload :ApiClient, 'postman_mta/api_client'
+  autoload :ApiRequest, 'postman_mta/api_request'
 
   mattr_accessor :api_key
   mattr_accessor :api_secret
