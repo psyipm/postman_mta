@@ -1,6 +1,6 @@
 module PostmanMta
   class ApplicationModel
-    delegate :get, :post, :put, :patch, :delete, to: :connection
+    delegate :get, :post, :put, :patch, :delete, :response_body, :response_status, to: :connection
 
     protected
 

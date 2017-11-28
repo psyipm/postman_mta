@@ -17,4 +17,11 @@ RSpec.describe PostmanMta::Domain do
     expect(WebMock).to have_requested(:post, Regexp.new('/api/v1/domains'))
     expect(domain).to_not be_empty
   end
+
+  it 'should send setup dns request' do
+    domain = described_class.new.dns_setup('some-uuid')
+
+    expect(WebMock).to have_requested(:put, Regexp.new('/api/v1/domains/[\w\d-]+/dns_setup'))
+    expect(domain).to_not be_empty
+  end
 end

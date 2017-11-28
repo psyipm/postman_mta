@@ -3,6 +3,7 @@ RSpec.shared_context 'domain', shared_context: :metadata do
 
   let(:get_domains_success_body) { File.new('spec/stubs/domains/get_domains_success_body.json') }
   let(:create_domain_success_body) { File.new('spec/stubs/domains/create_domain_success_body.json') }
+  let(:dns_setup_success_body) { File.new('spec/stubs/domains/dns_setup_success_body.json') }
 
   before(:each) do
     stub_request(:get, Regexp.new('/api/v1/domains'))
@@ -10,6 +11,9 @@ RSpec.shared_context 'domain', shared_context: :metadata do
 
     stub_request(:post, Regexp.new('/api/v1/domains'))
       .to_return(status: 201, body: create_domain_success_body, headers: headers)
+
+    stub_request(:put, Regexp.new('/api/v1/domains/[\w\d-]+/dns_setup'))
+      .to_return(status: 200, body: dns_setup_success_body, headers: headers)
   end
 end
 
