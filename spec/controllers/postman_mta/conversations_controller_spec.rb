@@ -20,6 +20,11 @@ RSpec.describe PostmanMta::ConversationsController, type: :controller do
     end
   end
 
+  it 'should search conversations' do
+    get :search, params: { q: 'test' }
+    expect(response).to be_success
+  end
+
   it 'should show conversation with messages' do
     get :show, params: { id: conversation_id }
     expect(response).to be_success

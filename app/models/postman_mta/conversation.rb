@@ -33,7 +33,7 @@ module PostmanMta
     end
 
     def search(params = {})
-      get('/conversations', body: params)
+      get('/search/conversations', body: params)
     end
   end
 end

@@ -9,6 +9,7 @@ PostmanMta::Engine.routes.draw do
     end
 
     match :starred, on: :collection, via: :get, to: 'conversations#index'
+    match :search, on: :collection, via: :get
     match :read, on: :collection, via: [:put, :patch]
     match :unread, on: :collection, via: [:put, :patch]
     match :move, on: :collection, via: [:put, :patch]
