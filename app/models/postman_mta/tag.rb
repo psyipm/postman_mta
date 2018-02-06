@@ -7,11 +7,11 @@ module PostmanMta
     end
 
     def create(params)
-      post("/api/v1/conversations/#{conversation_id}/tags", body: params)
+      post("/conversations/#{conversation_id}/tags", body: params)
     end
 
     def destroy(tag_id)
-      delete("/api/v1/conversations/#{conversation_id}/tags/#{tag_id}")
+      delete("/conversations/#{conversation_id}/tags/#{tag_id}")
     end
   end
 end
