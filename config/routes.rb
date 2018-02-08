@@ -25,4 +25,5 @@ PostmanMta::Engine.routes.draw do
   end
 
   resources :routes, only: :index
+  resources :domains, only: :index
 end
