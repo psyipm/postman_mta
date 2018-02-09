@@ -19,6 +19,14 @@ module PostmanMta
       self.class.send(request_type.downcase, path, request_options)
     end
 
+    def full_path
+      @full_path ||= PostmanMta.api_endpoint + path
+    end
+
+    def uri
+      @uri ||= URI(full_path)
+    end
+
     private
 
     def request_options
@@ -26,7 +34,7 @@ module PostmanMta
     end
 
     def auth_headers
-      PostmanMta::Utils::SignedRequest.new(request_method: request_type.upcase, path: path).headers
+      PostmanMta::Utils::SignedRequest.new(request_method: request_type.upcase, path: uri.request_uri).headers
     end
 
     def merge_with_custom_options

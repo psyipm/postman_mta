@@ -1,7 +1,7 @@
 module PostmanMta
   class Domain < ApplicationModel
-    def index
-      get('/domains')
+    def index(params = {})
+      get('/domains', body: params)
     end
 
     def create(params = {})
