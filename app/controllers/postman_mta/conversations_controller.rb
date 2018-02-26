@@ -30,6 +30,10 @@ module PostmanMta
       render conversation.move(permitted_params)
     end
 
+    def search
+      render conversation.search(permitted_params)
+    end
+
     private
 
     def conversation

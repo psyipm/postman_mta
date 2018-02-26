@@ -11,7 +11,7 @@ require 'support/application_routes'
 PostmanMta.setup do |config|
   config.api_key = 'test_api_key'
   config.api_secret = 'test_api_secret'
-  config.api_endpoint = 'http://example.com'
+  config.api_endpoint = 'http://example.com/api/v1'
 end
 
 RSpec.configure do |config|

@@ -7,7 +7,7 @@ module PostmanMta
     end
 
     def find(uuid)
-      get("/api/v1/messages/#{message_token}/attachments/#{uuid}")
+      get("/messages/#{message_token}/attachments/#{uuid}")
     end
   end
 end
