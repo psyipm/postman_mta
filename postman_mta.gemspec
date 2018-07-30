@@ -29,5 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'reek'
   spec.add_development_dependency 'overcommit'
 
-  spec.add_dependency 'httparty', '~> 0.15.6'
+  spec.add_dependency 'httparty', '~> 0.15'
 end
