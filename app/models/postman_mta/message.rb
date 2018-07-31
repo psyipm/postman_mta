@@ -11,5 +11,9 @@ module PostmanMta
     def unread_stats
       get('/stats/messages/unread')
     end
+
+    def search(params = {})
+      get('/search/messages', body: params)
+    end
   end
 end
