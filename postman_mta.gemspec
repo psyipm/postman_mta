@@ -28,8 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'overcommit'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'reek'
-  spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'sqlite3'
 
   spec.add_dependency 'httparty', '~> 0.15'
 end

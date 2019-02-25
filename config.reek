@@ -12,3 +12,7 @@ UtilityFunction:
   exclude:
     - "PostmanMta::Utils::Signature#digest"
     - "PostmanMta::ApiClient#perform_request"
+
+FeatureEnvy:
+  exclude:
+    - 'PostmanMta::AttachmentsController#send_attachment'
