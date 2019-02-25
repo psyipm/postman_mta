@@ -5,6 +5,7 @@ module PostmanMta
   module Utils
     autoload :Signature, 'postman_mta/utils/signature'
     autoload :SignedRequest, 'postman_mta/utils/signed_request'
+    autoload :SendfileUrl, 'postman_mta/utils/sendfile_url'
   end
 
   autoload :ApiClient, 'postman_mta/api_client'
