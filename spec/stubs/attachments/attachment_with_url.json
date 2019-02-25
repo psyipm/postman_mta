@@ -1,0 +1,10 @@
+{
+  "attachment": {
+    "body": "",
+    "url": "https://s3.amazon.com/bucket/file/path?s=test",
+    "content_type": "text/plain",
+    "filename": "file.txt",
+    "size": 9,
+    "uuid": "176d0fdb-226c-4a58-a22d-e2856b4c7ec4"
+  }
+}
