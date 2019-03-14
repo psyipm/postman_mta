@@ -1,7 +1,15 @@
 module PostmanMta
   class LabelsController < ApplicationController
+    def index
+      render label.index(label_params)
+    end
+
     def create
       render label.create(label_params)
+    end
+
+    def update
+      render label.update(params[:id], label_params)
     end
 
     def destroy
