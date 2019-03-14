@@ -14,7 +14,7 @@ PostmanMta::Engine.routes.draw do
     match :unread, on: :collection, via: [:put, :patch]
     match :move, on: :collection, via: [:put, :patch]
 
-    resources :labels, only: [:create, :destroy]
+    resources :labels, only: [:create, :update, :destroy]
     resources :tags, only: [:create, :destroy]
   end
 
@@ -26,4 +26,5 @@ PostmanMta::Engine.routes.draw do
 
   resources :routes, only: :index
   resources :domains, only: :index
+  resources :labels, only: :index
 end
