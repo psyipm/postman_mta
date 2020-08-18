@@ -24,6 +24,10 @@ PostmanMta::Engine.routes.draw do
     end
   end
 
+  namespace :archive do
+    resources :conversations, only: :index
+  end
+
   resources :routes, only: :index
   resources :domains, only: :index
   resources :labels, only: :index

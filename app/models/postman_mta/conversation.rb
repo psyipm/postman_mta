@@ -4,10 +4,14 @@ module PostmanMta
       get('/conversations', body: params)
     end
 
+    def archive(params = {})
+      get('/archive/conversations', body: params)
+    end
+
     def folder(folder, params = {})
       params = {
         folder: folder
-      }.merge(params)
+      }.merge!(params)
 
       get('/conversations', body: params)
     end
