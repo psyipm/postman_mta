@@ -25,7 +25,7 @@ PostmanMta::Engine.routes.draw do
   end
 
   namespace :archive do
-    resources :conversations, only: :index
+    resources :conversations, only: [:index, :show]
   end
 
   resources :routes, only: :index
