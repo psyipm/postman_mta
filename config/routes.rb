@@ -25,7 +25,9 @@ PostmanMta::Engine.routes.draw do
   end
 
   namespace :archive do
-    resources :conversations, only: [:index, :show]
+    resources :conversations, only: [:index, :show] do
+      match :move, on: :collection, via: [:put, :patch]
+    end
   end
 
   resources :routes, only: :index

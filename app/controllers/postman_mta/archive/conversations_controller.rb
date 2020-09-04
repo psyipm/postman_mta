@@ -9,6 +9,10 @@ module PostmanMta
         render conversation.find(params[:id])
       end
 
+      def move
+        render conversation.move(permitted_params)
+      end
+
       private
 
       def conversation

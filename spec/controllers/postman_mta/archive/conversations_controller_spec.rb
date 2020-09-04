@@ -28,4 +28,10 @@ RSpec.describe PostmanMta::Archive::ConversationsController, type: :controller d
     expect(response).to be_success
     expect(response.body).to match(/conversation[\w\W]+test message/)
   end
+
+  it 'should move conversation to folder' do
+    put :move, params: { conversation_ids: [conversation_id], folder: 'inbox' }
+
+    expect(response).to be_success
+  end
 end
