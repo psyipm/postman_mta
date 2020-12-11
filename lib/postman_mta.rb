@@ -10,6 +10,7 @@ module PostmanMta
 
   autoload :ApiClient, 'postman_mta/api_client'
   autoload :ApiRequest, 'postman_mta/api_request'
+  autoload :RecordNotFound, 'postman_mta/record_not_found'
 
   mattr_accessor :api_key
   mattr_accessor :api_secret

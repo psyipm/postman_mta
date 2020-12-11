@@ -5,6 +5,7 @@ module PostmanMta
     def show
       response = attachment.find(params[:uuid]).deep_symbolize_keys
       file = response.dig(:json, :attachment)
+      raise(PostmanMta::RecordNotFound, "Attachment via id #{params[:uuid]} not found") unless file
 
       if file[:body].present?
         send_attachment(file)
