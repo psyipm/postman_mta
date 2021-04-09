@@ -5,7 +5,10 @@ module PostmanMta
     end
 
     def create
-      render message.create(message_params)
+      data = message.create(message_params)
+
+      head data[:status]
+      render data
     end
 
     private

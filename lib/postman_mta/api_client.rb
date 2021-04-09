@@ -17,7 +17,7 @@ module PostmanMta
       @response_body = response.parsed_response
       @response_status = response.code
 
-      { json: response_body, status: response_status }
+      { json: response_body, status: @response_status }
     end
   end
 end
