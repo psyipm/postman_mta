@@ -19,6 +19,10 @@ RSpec.shared_context 'conversation', shared_context: :metadata do
     File.new('spec/stubs/conversations/move_conversations_success_body.json')
   end
 
+  let(:move_archive_conversations_success_body) do
+    File.new('spec/stubs/conversations/move_conversations_success_body.json')
+  end
+
   let(:search_conversations_success_body) do
     File.new('spec/stubs/conversations/index_conversations_success_body.json')
   end
@@ -40,6 +44,9 @@ RSpec.shared_context 'conversation', shared_context: :metadata do
 
     stub_request(:patch, Regexp.new('/api/v1/conversations/move'))
       .to_return(status: 200, body: move_conversations_success_body, headers: headers)
+
+    stub_request(:patch, Regexp.new('/api/v1/archive/conversations/move'))
+      .to_return(status: 200, body: move_archive_conversations_success_body, headers: headers)
 
     stub_request(:get, Regexp.new('/api/v1/search/conversations'))
       .to_return(status: 200, body: search_conversations_success_body, headers: headers)

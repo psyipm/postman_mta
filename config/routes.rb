@@ -33,4 +33,5 @@ PostmanMta::Engine.routes.draw do
   resources :routes, only: :index
   resources :domains, only: :index
   resources :labels, only: :index
+  resources :notes, only: [:create, :update]
 end
