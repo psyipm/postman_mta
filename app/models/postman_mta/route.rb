@@ -11,5 +11,9 @@ module PostmanMta
     def create(params = {})
       post('/routes', body: params)
     end
+
+    def destroy(uuid, params = {})
+      delete("/routes/#{uuid}", body: params)
+    end
   end
 end
