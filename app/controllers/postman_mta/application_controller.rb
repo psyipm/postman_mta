@@ -10,8 +10,6 @@ module PostmanMta
       ActionController::Renderers::All,
       ActionController::ConditionalGet,
 
-      ActionController::ForceSSL,
-
       AbstractController::Callbacks,
       ActionController::StrongParameters,
 
